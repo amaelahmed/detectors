@@ -88,5 +88,5 @@ OpenCV
 
 👤 Built by
 
-Amal AhammedGitHub: @amaelahmed
+Amal Ahammed
 
