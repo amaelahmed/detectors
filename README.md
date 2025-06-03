@@ -35,16 +35,22 @@ cd detectors
 
 2. Set up a virtual environment
 
-python3.10 -m venv venv310
-source venv310/bin/activate
+apt update
+apt install python3.10 python3.10-venv -y
+python3.10 -m venv ~/venv310
+source ~/venv310/bin/activate
+
 
 3. Install the dependencies
 
-pip install -r requirements.txt
+pip install --upgrade pip
+pip install opencv-python mediapipe torch torchvision torchaudio ultralytics
 
-If you don’t have requirements.txt, run this:
+1. Create a folder to store the video:
+mkdir -p /root/Videos
+Make sure the path is correct by checking with:
+ls "/media/sf_Desktop/"
 
-pip install opencv-python mediapipe ultralytics
 
 🎞️ Usage
 
@@ -56,10 +62,14 @@ cp "/media/sf_Desktop/your-video.mp4" ./input.mp4
 
 📌 Rename it to input.mp4 or modify the filename in the script.
 
-2. Run the script
+✅ STEP 5: Run the script
+Make sure you're in the virtual environment:
 
-python pose_yolo_video.py
 
+source ~/venv310/bin/activate
+Then run the script:
+
+python ~/pose_yolo.py
 The video will play live and create an output.mp4 with detected poses and objects.
 
 📁 File Structure
