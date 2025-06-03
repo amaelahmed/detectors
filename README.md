@@ -10,7 +10,7 @@ This tool processes a video using **YOLOv8** and **MediaPipe Pose** to visualize
 - Dual Detection: YOLOv8 + MediaPipe Pose
 - Auto-saving annotated output video
 - Clean, beginner-friendly Python script
-- Console prints: `Built by Amal Ahammed`
+- Console prints: `Developer by Amal Ahammed`
 
 ---
 
