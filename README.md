@@ -1,6 +1,6 @@
 🎯 Pose + YOLO Video Analyzer
 
-A Python tool that uses YOLOv8 and MediaPipe Pose to detect objects and human pose landmarks in a video.✅ Built with ❤️ by Amal Ahammed.
+A Python tool that uses YOLOv8 and MediaPipe Pose to detect objects and human pose landmarks in a video.
 
 🧠 What It Does
 
