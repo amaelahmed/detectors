@@ -33,54 +33,48 @@ Ultralytics (YOLOv8)
 git clone https://github.com/amaelahmed/detectors.git
 cd detectors
 
-2. Set up a virtual environment
+# Update package list
+sudo apt update
 
-apt update
-apt install python3.10 python3.10-venv -y
+# Install prerequisite package for adding PPAs
+sudo apt install software-properties-common -y
+
+# Add the deadsnakes PPA repository for newer Python versions
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+# Update package list again after adding the new repository
+sudo apt update
+
+# Install Python 3.10 and related packages
+sudo apt install python3.10 python3.10-venv python3.10-dev -y
+
+# (Optional) Add the deadsnakes PPA manually if needed
+sudo sh -c 'echo "deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu focal main" > /etc/apt/sources.list.d/deadsnakes-ppa.list'
+
+# Add the PPA signing key
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A755776
+
+# Update package list after adding manual repository and key
+sudo apt update
+
+# Create a Python 3.10 virtual environment
 python3.10 -m venv ~/venv310
+
+# Activate the virtual environment
 source ~/venv310/bin/activate
 
-
-3. Install the dependencies
-
+# Upgrade pip inside the virtual environment
 pip install --upgrade pip
-pip install opencv-python mediapipe torch torchvision torchaudio ultralytics
 
-1. Create a folder to store the video:
-mkdir -p /root/Videos
-Make sure the path is correct by checking with:
-ls "/media/sf_Desktop/"
+# Install required Python packages inside the virtual environment
+pip install opencv-python mediapipe ultralytics
 
-
-🎞️ Usage
-
-1. Move your video into the project folder
-
-For example, move a file from Desktop to this project:
-
-cp "/media/sf_Desktop/your-video.mp4" ./input.mp4
-
-📌 Rename it to input.mp4 or modify the filename in the script.
-
-✅ STEP 5: Run the script
-Make sure you're in the virtual environment:
-
-
+# Make sure the virtual environment is activated before running your script
 source ~/venv310/bin/activate
-Then run the script:
 
-python ~/pose_yolo.py
-The video will play live and create an output.mp4 with detected poses and objects.
+# Run your Python script
+python pose_yolo_video.py
 
-📁 File Structure
-
-.
-├── pose_yolo_video.py     # Main script
-├── yolov8n.pt             # YOLOv8 model file
-├── input.mp4              # Input video (add manually)
-├── output.mp4             # Processed output
-├── requirements.txt       # Dependencies
-└── README.md              # Instructions
 
 💡 Notes
 
